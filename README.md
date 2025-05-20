@@ -1,20 +1,9 @@
-# Fullstack Notes App with AWS Amplify (GraphQL + Storage + Auth)
+# Fullstack Notes App with AWS Amplify (GraphQL + Storage + Auth) 
 
+[Demo Link] (https://main.dkfsfcuhup3em.amplifyapp.com/)
 This project is a full-stack note-taking app built with **React**, powered by **AWS Amplify Gen 2**, following the official AWS [Build a React App with Amplify](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/) tutorial.
 
 Users can sign up, create notes with titles and descriptions, upload and preview images stored in S3, and delete their notes — all securely authenticated using Amazon Cognito.
-
----
-
-## Based on the AWS Tutorial
-
-This project closely follows the AWS Amplify hands-on guide:
-**[Build a Full-Stack React App with Amplify](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/)**
-
-It’s extended with:
-- A clean UI using Amplify UI React components
-- S3 image upload and preview using signed URLs
-- Modular Amplify Gen 2 setup with sandbox deployment
 
 ---
 
