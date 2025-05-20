@@ -1,12 +1,117 @@
-# React + Vite
+# Fullstack Notes App with AWS Amplify (GraphQL + Storage + Auth)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a full-stack note-taking app built with **React**, powered by **AWS Amplify Gen 2**, following the official AWS [Build a React App with Amplify](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/) tutorial.
 
-Currently, two official plugins are available:
+Users can sign up, create notes with titles and descriptions, upload and preview images stored in S3, and delete their notes — all securely authenticated using Amazon Cognito.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Based on the AWS Tutorial
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project closely follows the AWS Amplify hands-on guide:
+**[Build a Full-Stack React App with Amplify](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/)**
+
+It’s extended with:
+- A clean UI using Amplify UI React components
+- S3 image upload and preview using signed URLs
+- Modular Amplify Gen 2 setup with sandbox deployment
+
+---
+
+## Tech Stack
+
+| Layer       | Tech                             |
+|-------------|----------------------------------|
+| Frontend    | React + Vite                     |
+| UI          | AWS Amplify UI React Components |
+| Auth        | Amazon Cognito                   |
+| Data/API    | AWS AppSync + Amplify Data       |
+| Storage     | Amazon S3                        |
+| Backend     | AWS Amplify Gen 2                |
+| Styling     | Vanilla CSS                      |
+
+---
+
+## Features
+
+- **User Authentication** using Amplify’s `Authenticator`
+- **Note Creation** with name, description, and optional image
+- **List & Delete Notes**
+- **Image Upload to S3**
+- **Per-user file isolation using identityId**
+
+---
+
+## Key Files Overview
+
+| File                | Purpose |
+|---------------------|---------|
+| `App.jsx`           | Main app logic: CRUD, file upload, and UI |
+| `index.css`         | Custom styles and grid layout |
+| `amplify/resource.ts` | Backend storage rules with `defineStorage()` |
+| `amplify_outputs.json` | Auto-generated config for Amplify Gen 2 |
+
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start Amplify sandbox
+
+```bash
+npx ampx sandbox
+```
+
+> Keep this running — it deploys and connects your Amplify backend in real time.
+
+### 3. Start development server
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:5173`
+
+---
+
+## Auth Flow
+
+- Sign in/sign up handled via Amplify’s `Authenticator`
+- User identity (`identityId`) is used to scope storage paths per user
+
+---
+
+## Image Storage
+
+- Images are uploaded to:  
+  `media/{identityId}/{imageName}`
+- Fetched using signed S3 URLs via `getUrl()`
+
+---
+
+## Learnings
+
+- Practiced Amplify Gen 2’s backend-as-code model with TypeScript
+- Worked with GraphQL APIs using `generateClient`
+- Used S3 for secure, identity-based media storage
+- Integrated Amplify Auth, Data, and Storage in a React app
+
+---
+
+## Potential Enhancements
+
+- Add edit/update functionality for notes
+- Image preview before upload
+- Group-based or public sharing of notes
+
+---
+
+## References
+
+- [AWS Amplify Docs](https://docs.amplify.aws/)
+- [Official Tutorial](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/)
