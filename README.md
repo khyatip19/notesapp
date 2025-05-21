@@ -1,6 +1,6 @@
 # Fullstack Notes App with AWS Amplify (GraphQL + Storage + Auth) 
 
-Check out the web app here: [Demo Link](https://main.dkfsfcuhup3em.amplifyapp.com/)
+Check out the web app here: [Live Link](https://main.dkfsfcuhup3em.amplifyapp.com/)
 
 Architecture Diagram:
 ![image](https://github.com/user-attachments/assets/4f65211a-2749-4127-8372-75d33fec0f46)
