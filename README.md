@@ -2,6 +2,10 @@
 
 Check out the web app here: [Demo Link](https://main.dkfsfcuhup3em.amplifyapp.com/)
 
+Architecture Diagram:
+![image](https://github.com/user-attachments/assets/4f65211a-2749-4127-8372-75d33fec0f46)
+
+
 This project is a full-stack note-taking app built with **React**, powered by **AWS Amplify Gen 2**, following the official AWS tutorial: [Build a React App with Amplify](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/)
 
 Users can sign up, create notes with titles and descriptions, upload and preview images stored in S3, and delete their notes — all securely authenticated using Amazon Cognito.
